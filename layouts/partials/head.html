@@ -71,7 +71,7 @@
     <link type="text/css" rel="stylesheet" href="{{"/vendor/css/bootstrap.min.css" | relURL}}">
 {{- end -}}
 
-{{ if not .Site.Params.disableDarkmode }}
+{{ if and (not .Site.Params.disableDarkmode) (.Site.Params.enableAutoDarkMode)}}
 {{ $darkmode := resources.Get "scss/dark-mode.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $darkmode.RelPermalink }}" integrity="{{ $darkmode.Data.Integrity }}" media="screen">
 {{ else }}
