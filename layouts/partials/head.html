@@ -16,13 +16,13 @@
 <meta name="theme-color" content="#ffffff">
 
 <!-- open-graph -->
-{{if .Site.Params.enableOpenGraph}}
-{{ template "_internal/opengraph.html" . }}
+{if .Site.Params.enableOpenGraph}}
+{{ partial "opengraph.html" . }}
 {{end}}
 
 <!-- twitter-cards -->
 {{if .Site.Params.enableTwitterCards}}
-{{ template "_internal/twitter_cards.html" . }}
+{{ partial "twitter_cards.html" . }}
 {{end}}
 
 <!-- metadata -->

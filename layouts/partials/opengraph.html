@@ -1,0 +1,18 @@
+{{- $title := .Title -}}
+{{- $siteTitle := .Site.Title -}}
+{{- $description := .Description | default .Site.Params.description -}}
+{{- $image := .Params.featured_image -}}
+{{- $url := .Permalink -}}
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ if ne $title $siteTitle }}{{ $title }} | {{ end }}{{ $siteTitle }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ $url }}">
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:site_name" content="{{ $siteTitle }}">
+
+<!-- WhatsApp específico -->
+<meta property="og:image:alt" content="{{ $title }}">
+<meta property="og:locale" content="pt_BR">
+
