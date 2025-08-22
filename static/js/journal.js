@@ -250,18 +250,8 @@ let night = document.cookie.replace(
   "$1"
 );
 
-if (night == "") {
-  if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    toggleDarkMode();
-  }
-} else {
-  // If night is not empty
-  if (night === "1") {
-    toggleDarkMode();
-  }
+if (night === "1") {
+	toggleDarkMode();
 }
 
 try {
